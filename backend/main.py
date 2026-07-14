@@ -16,7 +16,7 @@ app = FastAPI(title="Reel Transcription API")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://https://reel-to-transcript.netlify.app"
+        "https://reel-to-transcript.netlify.app"
     ],  # Adjust to our specific frontend domain in production
     allow_credentials=True,
     allow_methods=["*"],
