@@ -13,7 +13,7 @@ function App() {
     setError(null);
 
     try {
-      const response = await fetch("http://localhost:8000/api/transcribe", {
+      const response = await fetch("https://reel-to-transcript.onrender.com/api/transcribe", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

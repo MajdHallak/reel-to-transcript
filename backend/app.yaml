@@ -1,0 +1,28 @@
+# Use a custom Docker-based runtime in the Flexible environment
+runtime: custom
+env: flex
+
+# Allocate resources capable of running Whisper model processing
+resources:
+  cpu: 2
+  memory_gb: 4
+  disk_size_gb: 10
+
+# Configure network settings to expose the correct port
+forwarded_ports:
+  - 8000
+
+# Customize scaling to manage costs
+automatic_scaling:
+  min_num_instances: 1
+  max_num_instances: 2
+  cpu_utilization:
+    target_utilization: 0.85
+
+# Extend timeouts for long-running transcription tasks
+network:
+  session_affinity: true
+
+# Ensure our FastAPI environment doesn't buffer logs
+env_variables:
+  PYTHONUNBUFFERED: "1"
