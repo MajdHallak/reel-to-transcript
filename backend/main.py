@@ -15,10 +15,8 @@ app = FastAPI(title="Reel Transcription API")
 # Configure CORS to allow our React frontend to communicate with the API
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "https://reel-to-transcript.netlify.app"
-    ],  # Adjust to our specific frontend domain in production
-    allow_credentials=True,
+    allow_origins=["*"],
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
